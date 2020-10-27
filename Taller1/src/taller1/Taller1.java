@@ -15,7 +15,22 @@ public class Taller1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        retornaPosicionF("#yosoyESPOL");
     }
     
+    public static void retornaPosicionF(String s){
+        retornaPosicion(s,0);
+    }
+    
+    private static void retornaPosicion(String palabra,int indice){
+        char letra = palabra.charAt(indice);
+        if(Character.isUpperCase(letra)){
+            System.out.println("La letra esta en mayuscula: " +letra);
+            System.out.println("La posicion de la letra en mayuscula es: " +indice);
+        }
+        else{
+           retornaPosicion(palabra,indice+1); 
+        }
+       
+    }
 }
