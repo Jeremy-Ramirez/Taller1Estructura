@@ -15,8 +15,10 @@ public class Taller1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        retornaPosicionF("aaaaa");//Prueba de problema #1
-        replaceOA("Buenos dias a todos!", 2);//Prueba de problema #2
+        retornaPosicionF("aaaaa");//Prueba de ejercicio #1
+        replaceOA("Buenos dias a todos!", 2);//Prueba de ejercicio #2
+        int [] x = {1,2,3,4,5,6,7,7,8};
+        System.out.println(Comparar(x));//Prueba de ejercicio #3
     }
     //PROBLEMA #1...............................................................
     public static void retornaPosicionF(String s){
@@ -57,5 +59,32 @@ public class Taller1 {
         } 
         
     }
+    
+    //PROBLEMA #3...............................................................
+    public static int Comparar(int[]arreglo){
+        return Comparar1(arreglo,0,arreglo.length-1,0);
+    }
+    private static int Comparar1(int[] arreglo, int low, int high, int var){
+        if(low>high && arreglo[0]==0){
+            return low+1;
+        }else if(low>high && arreglo[0]!=0){
+            return low;
+        }
+        else{
+            int mid= (low+high)/2;
+            if(mid==arreglo[mid]-arreglo[var] ){
+               return Comparar1(arreglo, mid+1, high, var);
+            }else if(arreglo[mid]==arreglo[mid-1]){
+               return mid;
+            }else if(arreglo[mid]==arreglo[mid+1]){
+                return mid+1 ;
+            }
+            else {
+               return Comparar1(arreglo, low, mid-1,var);
+            }
+        }
+        
+    }
+        
     
 }
