@@ -15,7 +15,7 @@ public class Taller1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        retornaPosicionF("aaaaaL");
+        retornaPosicionF("aaaaa");
     }
     
     public static void retornaPosicionF(String s){
@@ -24,15 +24,16 @@ public class Taller1 {
     
     private static void retornaPosicion(String palabra,int indice){
         char letra = palabra.charAt(indice);
-       if (palabra.equals(palabra.toLowerCase())){
-           System.out.println("-1");  
-       }
-       else if(Character.isUpperCase(letra)){
-           System.out.println("La letra es:"+letra);
-           System.out.println("La posicion es:"+indice);
-       } 
-       else{
-           retornaPosicion(palabra,indice+1);
-       }
+        if(Character.isUpperCase(letra)){
+          System.out.println("La  Letra en Mayuscula es: "+letra);
+          System.out.println("La posicion es: " +indice);
+          
+      }else if(indice == palabra.length()-1){
+          System.out.println("-1");
+      }else{
+          retornaPosicion(palabra,indice+1);
+      }
+          
+      
     }
 }
